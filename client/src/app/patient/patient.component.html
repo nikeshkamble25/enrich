@@ -1,0 +1,199 @@
+<mat-dialog-content class="mat-typography myapp-no-padding-dialog" style="padding: 0px;">
+  <div class="popup-header">
+    Add New Exercise programme
+  </div>
+  <form [formGroup]="exerciseForm" (ngSubmit)="addExercise()">
+    <div class="popup-container">
+      <section>
+        <div class="row">
+          <div class="col-1">
+            <mat-form-field style="width: 300px">
+              <mat-label>Name of exercise programme</mat-label>
+              <input type="text" id="ProgramName" matInput formControlName="ProgramName" class="form-control"
+                placeholder="">
+            </mat-form-field>
+          </div>
+          <div class="col-1">
+            <mat-form-field style="width: 300px">
+              <mat-label>Date</mat-label>
+              <input type="date" id="ProgramDate" matInput formControlName="ProgramDate" class="form-control"
+                placeholder="">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            <mat-form-field style="width: 670px;">
+              <mat-label>Goals/objectives</mat-label>
+              <textarea id="GoalsObjectives" matInput formControlName="GoalsObjectives" class="form-control" cols="10"
+                placeholder=""></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <div formArrayName="exercises">
+          <div *ngFor="let exercisesControl of this.getExercise().controls; index as j">
+
+            <div formGroupName="{{j}}">
+              <div class="row">
+                <div class="col-1">
+                  <mat-form-field style="width: 300px">
+                    <mat-label>Exercise Name</mat-label>
+                    <input type="text" id="exerciseName" matInput formControlName="exerciseName" class="form-control"
+                      placeholder="">
+                  </mat-form-field>
+                </div>
+                <div class="col-1">
+                  <mat-form-field style="width: 300px">
+                    <mat-label>Review date</mat-label>
+                    <input type="date" id="reviewDate" matInput formControlName="reviewDate" class="form-control"
+                      placeholder="">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <mat-form-field style="width: 670px;">
+                    <mat-label>Description of the exercise activity</mat-label>
+                    <textarea id="description" matInput formControlName="description" class="form-control" cols="5"
+                      placeholder=""></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div formGroupName="initialProgression">
+                <div class="row">
+                  <div class="col-2" style="height: 50px;">
+                    Initial:
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-1">
+                    <mat-form-field style="width: 100px">
+                      <mat-label></mat-label>
+                      <input type="text" id="initialProgressionReps" matInput formControlName="initialProgressionReps"
+                        class="form-control" placeholder="">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-1" style="align-self: center;">
+                    reps
+                  </div>
+                  <div class="col-1">
+                    <mat-form-field style="width: 100px">
+                      <mat-label></mat-label>
+                      <input type="text" id="initialProgressionPerWeek" matInput
+                        formControlName="initialProgressionPerWeek" class="form-control" placeholder="">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-1" style="align-self: center;">
+                    times per week
+                  </div>
+                  <div class="col-1" style="align-self: center;">
+                    <mat-form-field style="width: 100px">
+                      <mat-label></mat-label>
+                      <input type="text" id="initialProgressionTimePeriod" matInput
+                        formControlName="initialProgressionTimePeriod" class="form-control" placeholder="">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-1" style="align-self: center;">
+                    for the first
+                  </div>
+                  <div class="col-1" style="align-self: center;width: 10px;cursor: pointer;">
+                  </div>
+                </div>
+                <div formArrayName="progressions">
+                  <div *ngFor="let control of this.getProgression(j).controls; index as i">
+
+                    <div class="row" formGroupName="{{i}}">
+                      <div class="col-1">
+                        <mat-form-field style="width: 100px">
+                          <mat-label></mat-label>
+                          <input type="text" id="progressionReps" matInput formControlName="progressionReps"
+                            class="form-control" placeholder="">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-1" style="align-self: center;">
+                        reps
+                      </div>
+                     
+                      <div class="col-1">
+                        <mat-form-field style="width: 100px">
+                          <mat-label></mat-label>
+                          <input type="text" id="progressionPerWeek" matInput formControlName="progressionPerWeek"
+                            class="form-control" placeholder="">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-1" style="align-self: center;">
+                        times per week
+                      </div>
+                      <div class="col-1" style="align-self: center;">
+                        <mat-form-field style="width: 100px">
+                          <mat-label></mat-label>
+                          <input type="text" id="ProgressionTimePeriod" matInput formControlName="ProgressionTimePeriod"
+                            class="form-control" placeholder="">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-1" style="align-self: center;">
+                        for the first
+                      </div>
+                      <div class="col-1" style="align-self: center;cursor: pointer;">
+                        <mat-icon (click)="deleteProgression(j,i)">delete</mat-icon>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-1" style="padding: 10px;cursor: pointer;" (click)="addNextProgression(j)">
+                    + Add new progression
+                  </div>
+                </div>
+                <div class="row" cellpadding>
+                  <div class="col-1">
+                    <table>
+                      <tr>
+                        <!-- <td *ngFor="let file of this.getImageVideo(j)" valign="top"> -->
+                        <td *ngFor='let url of urls' valign="top">
+                          <img [src]="url" height="150px;" width="120px;">
+                        </td>
+                        <td valign="top">
+                          <input class="ng-hide" id="input-file-id" style="display:none"
+                            (change)="UploadImageFile($event,j)" multiple type="file" />
+                          <div class="upload-control" for="input-file-id"
+                            onclick="document.getElementById('input-file-id').click()">
+                            <mat-icon style="margin-top: 10px;font-size: 125px;">upload</mat-icon>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1">
+            <div class="pro-button dark-pro-button" (click)="this.addExercise()"
+              style="width: 670px;border: solid thin black;color:black;">Add new
+              exercise</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </form>
+  <div style="padding: 10px; background-color: #e0e0e0;">
+    <table style="width: 100%;">
+      <tr>
+        <td width="70%">
+        </td>
+        <td>
+          <div class="pro-button dark-pro-button" (click)="this.dialogRef.close()"> Back</div>
+        </td>
+        <td>
+          <div class="pro-button dark-pro-button" (click)="this.saveProgram()" style="background-color: #333333;color: white;"
+            >Create New Program
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</mat-dialog-content>

@@ -1,0 +1,16 @@
+header, .row {
+    display: flex;  /* aligns all child elements (flex items) in a row */
+  }
+  
+  .col-1 {
+    flex: 2;        /* distributes space on the line equally among items */
+  }
+  .col-2 {
+    flex: 4;        /* distributes space on the line equally among items */
+  }
+  .upload-control{
+    height: 150px;
+    width: 120px;
+    border: dashed thin #8b8b8b;
+    cursor: pointer;
+  }

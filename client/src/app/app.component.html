@@ -1,0 +1,109 @@
+<mat-toolbar color="primary" class="PageHeader">
+  <mat-icon style="cursor: pointer;" (click)="drawer.toggle()">menu</mat-icon>
+  <h1>Physiotherapist (admin) module</h1>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let dataItem of PatientList" class="patient-list-item"
+        (click)="this.displayPatient(dataItem.patientId)">
+        <div style="background-color: #c4c4c4;height: 30px; width: 30px; border-radius: 100px;">
+        </div>
+        <div class="side-user-list-item">
+          <a matLine>{{dataItem!.patientName}}</a>
+        </div>
+      </mat-list-item>
+      <mat-list-item class="add-new-patient">
+        <div class="add-new-patient">
+          <button mat-mini-fab color="white" style="background-color: white;border-radius: 100px;">
+            <mat-icon>add</mat-icon>
+          </button>
+          <span style="margin-left: 10px;">Add new patient</span>
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <mat-card>
+      <div class="user-details">
+        <div style="background-color: #c4c4c4;height: 100px; width: 100px; border-radius: 100px;margin-right: 20px;">
+        </div>
+        <div style="flex-grow: 8;">
+          <h1>{{Patient?.patientName}}</h1>
+          <div><span class="soft-color">NHS Number:</span> Test</div>
+          <div><span class="soft-color">Diagnosis:</span> Test</div>
+        </div>
+        <div style="flex-grow: 1;">
+          <div (click)="openDialog()"  class="pro-button dark-pro-button" >Add new program</div>
+        </div>
+        
+      </div>      
+    </mat-card>
+    <mat-tab-group>
+      <mat-tab *ngFor="let program of PatientProgramList" label="{{program.programName}}">
+        <div class="pro-card">
+          <div class="round-border">
+            <div class="flex-container">
+              <div style="flex-grow: 8;">
+                <div><span class="program-title">{{program.goalsObjectives}}</span><span class="program-title">
+                    ({{program.programDate|date:"dd.MM.yyyy"}})</span></div>
+                <div>
+                  {{program.programGoal}}
+                </div>
+              </div>
+              <div style="flex-grow: 1">
+                <span class="program-title"> {{program.excercise.length}} exercises</span>
+                <div>
+                  <div class="pro-button white-pro-button">Share with parents</div>
+                </div>
+              </div>
+            </div>
+            <div class="table-exercise soft-color">
+              <table cellpadding=0 cellspacing=0>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Repetitions</th>
+                  <th>Review Date</th>
+                </tr>
+                <tbody cellpadding="0" cellspacing="0" *ngFor="let excercise of program.excercise" >
+                  <tr>
+                    <td class="table-exercise-cell">{{excercise.excerciseId}}</td>
+                    <td class="table-exercise-cell">{{excercise.excerciseName}}</td>
+                    <td class="table-exercise-cell">{{excercise.description}}</td>
+                    <td class="table-exercise-cell">
+                      <table style="width:400px">
+                        <tr>
+                          <td><span  style="color:black;">{{excercise.initialProgression.initialProgressionReps}}</span> reps</td>
+                          <td><span  style="color:black;">{{excercise.initialProgression.initialProgressionPerWeek}}</span> time per week</td>
+                          <td>For first <span style="color:black;">{{excercise.initialProgression.initialProgressionTimePeriod}} week</span></td>
+                        </tr>
+                        <tr *ngFor="let progression of excercise.initialProgression.progression">
+                          <td><span style="color:black;">{{progression.progressionReps}}</span> reps</td>
+                          <td><span style="color:black;">{{progression.progressionPerWeek}}</span> time per week</td>
+                          <td>For first <span style="color:black;">{{progression.progressionTimePeriod}} week</span></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td class="table-exercise-cell">{{excercise.description|date:"dd.MM.yyyy"}}</td>
+                  </tr>
+                  <tr>
+                    <td  class="table-exercise-cell" colspan=6>
+                      <div class="images-container">
+                        <div *ngFor="let imageVideo of excercise.imageVideo" class="exec-card"><img
+                            src="{{imageVideo.imageVideoPath}}" />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</mat-drawer-container>

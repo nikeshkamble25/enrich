@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EnrichMyCare.EnrichMyCareService</name>
+    </assembly>
+    <members>
+        <member name="T:EnrichMyCare.EnrichMyCareService.Controllers.ExcerciseController">
+            <summary>
+            Controller for managing the Excercise, Initial Progression, Progression and ImageVideos
+            </summary>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ExcerciseController.#ctor(EnrichMyCare.Repositories.Infrastructure.IUnitOfWork,EnrichMyCare.Repositories.Contracts.IExcerciseRepository,EnrichMyCare.Repositories.Contracts.IInitialProgressionRepository,EnrichMyCare.Repositories.Contracts.IProgressionRepository,EnrichMyCare.Repositories.Contracts.IImageVideoRepository,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Adding all the required dependencies
+            </summary>
+            <param name="unitOfWork"></param>
+            <param name="excerciseRepository"></param>
+            <param name="initialProgressionRepository"></param>
+            <param name="progressionRepository"></param>
+            <param name="imageVideoRepository"></param>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ExcerciseController.GetAllExcercise">
+            <summary>
+            Get all the excercise from the data store
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ExcerciseController.GetExerciseById(System.Nullable{System.Int32})">
+            <summary>
+            Get excercise by excersieId from the data store
+            </summary>
+            <param name="exerciseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ExcerciseController.GetExerciseByProgramId(System.Nullable{System.Int32})">
+            <summary>
+            Get exercise by program id from the data store
+            </summary>
+            <param name="programId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ExcerciseController.AddExcercise(EnrichMyCare.DataEntities.Excercise,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Add excercise details in data store
+            </summary>
+            <param name="excercise"></param>
+            <param name="imageVideoIds"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EnrichMyCare.EnrichMyCareService.Controllers.ImageVideoUploadController">
+            <summary>
+            Image/Video Upload Controller class
+            </summary>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ImageVideoUploadController.#ctor(EnrichMyCare.Repositories.Infrastructure.IUnitOfWork,EnrichMyCare.Repositories.Contracts.IImageVideoRepository,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Image Video Constructor
+            </summary>
+            <param name="unitOfWork"></param>
+            <param name="imageVideoRepository"></param>
+            <param name="httpContextAccessor"></param>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ImageVideoUploadController.UploadImage(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Image and Video Upload service method
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ImageVideoUploadController.GetImageVideoByImageId(System.Nullable{System.Int32})">
+            <summary>
+            Returns the image/video file from data store
+            </summary>
+            <param name="imageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ImageVideoUploadController.GetImageVideoByExcerciseId(System.Nullable{System.Int32})">
+            <summary>
+            Get all the images by Excercise Id from the data store
+            </summary>
+            <param name="excerciseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ImageVideoUploadController.RemoveByImageVideoId(System.Nullable{System.Int32})">
+            <summary>
+            Remove images from the data store by ImageVideo Id
+            </summary>
+            <param name="imageVideoId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ImageVideoUploadController.RemoveByExerciseId(System.Nullable{System.Int32})">
+            <summary>
+            Remove images from the data store by Exercise Id
+            </summary>
+            <param name="exerciseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ImageVideoUploadController.CheckIfExcelFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Check the extension of uploaded files
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ImageVideoUploadController.WriteFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Method for writing file to a file system
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EnrichMyCare.EnrichMyCareService.Controllers.PatientController">
+            <summary>
+            Controller for managing patient details
+            </summary>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.PatientController.#ctor(EnrichMyCare.Repositories.Contracts.IPatientRepository,EnrichMyCare.Repositories.Infrastructure.IUnitOfWork)">
+            <summary>
+            Patient Controller Constructor
+            </summary>
+            <param name="patientRepository"></param>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.PatientController.GetAllPatients">
+            <summary>
+            Get All Patients List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.PatientController.GetPatientsById(System.Nullable{System.Int32})">
+            <summary>
+            Get patient details by patient Id from the data store
+            </summary>
+            <param name="patientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.PatientController.AddPatient(EnrichMyCare.DataEntities.Patient)">
+            <summary>
+            Add patient in data store
+            </summary>
+            <param name="patient"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.PatientController.UpdatePatient(EnrichMyCare.DataEntities.Patient)">
+            <summary>
+            Update patient in data store
+            </summary>
+            <param name="patient"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.PatientController.DeletePatient(EnrichMyCare.DataEntities.Patient)">
+            <summary>
+            Remove patient from data store
+            </summary>
+            <param name="patient"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EnrichMyCare.EnrichMyCareService.Controllers.ProgramExcerciseController">
+            <summary>
+            Controller for adding Excercise and its related data
+            </summary>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ProgramExcerciseController.#ctor(EnrichMyCare.Repositories.Infrastructure.IUnitOfWork,EnrichMyCare.Repositories.Contracts.IProgramRepository,EnrichMyCare.Repositories.Contracts.IExcerciseRepository,EnrichMyCare.Repositories.Contracts.IPatientProgramRepository)">
+            <summary>
+            Program Excercise Controller's Constructor
+            </summary>
+            <param name="unitOfWork"></param>
+            <param name="programRepository"></param>
+            <param name="excerciseRepository"></param>
+            <param name="patientProgramRepository"></param>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ProgramExcerciseController.GetAllProgramExcercise">
+            <summary>
+            Retrieves all program excercises
+            </summary>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ProgramExcerciseController.GetProgramById(System.Nullable{System.Int32})">
+            <summary>
+             Retrieves all program excercises by program Id
+            </summary>
+            <param name="programId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ProgramExcerciseController.GetProgramByPatientId(System.Nullable{System.Int32})">
+            <summary>
+            Get all the programs by Patient Id
+            </summary>
+            <param name="patientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnrichMyCare.EnrichMyCareService.Controllers.ProgramExcerciseController.AddProgram(EnrichMyCareService.ViewModel.ProgramViewModel)">
+            <summary>
+            Method for adding Program and Excercise in the data store
+            </summary>
+            <param name="program"></param>
+            <param name="excerciseId"></param>
+            <param name="patientId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EnrichMyCare.EnrichMyCareService.Infrastructure.EnrichMyCare_Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:EnrichMyCare.EnrichMyCareService.Infrastructure.EnrichMyCare_Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:EnrichMyCare.EnrichMyCareService.Infrastructure.EnrichMyCare_Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:EnrichMyCare.EnrichMyCareService.Infrastructure.EnrichMyCare_Messages.ExcerciseIdIsNull">
+            <summary>
+              Looks up a localized string similar to Excercise Id having null value.
+            </summary>
+        </member>
+        <member name="P:EnrichMyCare.EnrichMyCareService.Infrastructure.EnrichMyCare_Messages.ImageVideoDeletedById">
+            <summary>
+              Looks up a localized string similar to Image/Video successfully deleted from the data store.
+            </summary>
+        </member>
+        <member name="P:EnrichMyCare.EnrichMyCareService.Infrastructure.EnrichMyCare_Messages.ImageVideoIdIsNull">
+            <summary>
+              Looks up a localized string similar to ImageVideo Id having null value.
+            </summary>
+        </member>
+        <member name="P:EnrichMyCare.EnrichMyCareService.Infrastructure.EnrichMyCare_Messages.ImageVideoNotFoundByExcerciseId">
+            <summary>
+              Looks up a localized string similar to Image/Video by given Excercise Id not found.
+            </summary>
+        </member>
+        <member name="P:EnrichMyCare.EnrichMyCareService.Infrastructure.EnrichMyCare_Messages.ImageVideoNotFoundById">
+            <summary>
+              Looks up a localized string similar to Image/Video by given ImageVideo Id not found.
+            </summary>
+        </member>
+        <member name="P:EnrichMyCare.EnrichMyCareService.Infrastructure.EnrichMyCare_Messages.InvalidExtension">
+            <summary>
+              Looks up a localized string similar to Image/Video file has invalid extension.
+            </summary>
+        </member>
+        <member name="P:EnrichMyCare.EnrichMyCareService.Infrastructure.EnrichMyCare_Messages.PatientIdIsNull">
+            <summary>
+              Looks up a localized string similar to Patient Id having null value.
+            </summary>
+        </member>
+        <member name="P:EnrichMyCare.EnrichMyCareService.Infrastructure.EnrichMyCare_Messages.ProgramIdIsNull">
+            <summary>
+              Looks up a localized string similar to Program Id having null value.
+            </summary>
+        </member>
+        <member name="T:EnrichMyCareService.Startup">
+            <summary>
+            Startup class
+            </summary>
+        </member>
+        <member name="M:EnrichMyCareService.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup method
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:EnrichMyCareService.Startup.Configuration">
+            <summary>
+            Configuration Property
+            </summary>
+        </member>
+        <member name="M:EnrichMyCareService.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:EnrichMyCareService.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

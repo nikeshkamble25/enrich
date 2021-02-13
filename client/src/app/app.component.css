@@ -1,0 +1,151 @@
+.example-container {
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+.PageHeader {
+    background: #333333;
+    color: #c1c1c1;
+  }
+  .PageHeader  h1{
+      margin-left: 10px;
+  }
+
+  .soft-color{
+    color: #8b8b8b;
+    font-weight: 500;
+  }
+  .user-details{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: left; 
+    color: #333333;
+  }
+  .user-details > div {
+    margin: 10px;
+    padding: 20px;
+  }
+  .patient-list-item{      
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center; 
+  }
+  .add-new-patient{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center; 
+  }
+  
+  .example-sidenav { 
+    background-color: #e0e0e0; 
+  }
+
+  .side-user-list-item{
+      padding-left:10px ;
+      padding-right:30px ;
+  }
+  .user-menu{
+      width: 30px;
+      height: 30px;
+      background-color: black;
+      display: flex;
+      border-radius: 100px;
+      align-items: center;
+  }
+  .add-new-patient{
+      background-color: #333333;
+      align-items: center;
+      vertical-align: middle;
+      color: #c1c1c1;
+  }
+  .add-new-patient:hover{
+    background-color: #333333;
+    align-items: center;
+    vertical-align: middle;
+    color: #c1c1c1;
+}
+.flex-container {
+    display: flex;
+    background: #333333;
+    color: #c1c1c1;
+  }
+  
+  .flex-container > div {
+    margin: 10px;
+    padding: 20px;
+  }
+  .pro-card{
+      padding: 10px;
+  }
+  .round-border{
+      border-radius: 10px;
+      box-shadow: 1px 1px 3px black;
+  }
+  .program-title{
+      font-size: 20px;
+  }
+  section {
+    display: table;
+  }
+  .example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+  .table-exercise table{
+    width: 100%;
+  }
+  .table-exercise th{
+    border-bottom: solid thin #c4c4c4;
+    padding: 10px;
+    color: #8b8b8b;
+    background-color: #e0e0e0;
+    box-shadow: 1px 1px 3px black;
+    text-align: left;
+    font-weight: normal;
+  }
+  .table-exercise-cell{    
+    padding: 10px;
+    background-color: white;
+    color: #8b8b8b;
+    vertical-align: top;
+  }
+  .images-container  {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .images-container > div {
+    background-color: #f1f1f1;
+    width: 150px;
+    margin: 10px;
+    text-align: center;
+    height: 150px;
+    font-size: 30px;
+    border: solid thin #c4c4c4;
+    border-radius: 5px;
+  }
+  .images-container{
+    border-bottom: solid thin #c4c4c4;
+  }
+  .exec-card:hover img {
+    transform: scale(1.2, 1.2);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    opacity: 0.7;
+  }
+  
+  .exec-card img {
+    transform: scale(1, 1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    width: 150px;
+    height: 150px;
+  }
+  .animate {
+    transition: all 0.3s ease-in-out;
+  }
+ 
+  

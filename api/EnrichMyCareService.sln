@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnrichMyCare.EnrichMyCareService", "EnrichMyCareService\EnrichMyCare.EnrichMyCareService.csproj", "{2D2197F0-D416-4E82-9392-1E06EA13631E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnrichMyCare.EnrichDatabase", "EnrichDatabase\EnrichMyCare.EnrichDatabase.csproj", "{049CCBA6-3440-4ECF-BE75-B6FE392FA711}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnrichMyCare.Repositories", "EnrichMyCare.Repositories\EnrichMyCare.Repositories.csproj", "{4AEB9CB9-4E28-49A1-BAA6-69F18F2FFAAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnrichMyCare.DataEntities", "EnrichMyCare.DataEntities\EnrichMyCare.DataEntities.csproj", "{871C19DC-ACDB-4211-9307-DED5C87C690A}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EnrichMyCareDb", "EnrichMyCareDb\EnrichMyCareDb.sqlproj", "{9C580D8B-B046-43BC-832D-8BFF08C71610}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D2197F0-D416-4E82-9392-1E06EA13631E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D2197F0-D416-4E82-9392-1E06EA13631E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D2197F0-D416-4E82-9392-1E06EA13631E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D2197F0-D416-4E82-9392-1E06EA13631E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{049CCBA6-3440-4ECF-BE75-B6FE392FA711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{049CCBA6-3440-4ECF-BE75-B6FE392FA711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{049CCBA6-3440-4ECF-BE75-B6FE392FA711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{049CCBA6-3440-4ECF-BE75-B6FE392FA711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AEB9CB9-4E28-49A1-BAA6-69F18F2FFAAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AEB9CB9-4E28-49A1-BAA6-69F18F2FFAAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AEB9CB9-4E28-49A1-BAA6-69F18F2FFAAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AEB9CB9-4E28-49A1-BAA6-69F18F2FFAAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{871C19DC-ACDB-4211-9307-DED5C87C690A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{871C19DC-ACDB-4211-9307-DED5C87C690A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{871C19DC-ACDB-4211-9307-DED5C87C690A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{871C19DC-ACDB-4211-9307-DED5C87C690A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C580D8B-B046-43BC-832D-8BFF08C71610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C580D8B-B046-43BC-832D-8BFF08C71610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C580D8B-B046-43BC-832D-8BFF08C71610}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9C580D8B-B046-43BC-832D-8BFF08C71610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C580D8B-B046-43BC-832D-8BFF08C71610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C580D8B-B046-43BC-832D-8BFF08C71610}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E496F22-FD0D-4FEA-B31F-402653EEE79D}
+	EndGlobalSection
+EndGlobal

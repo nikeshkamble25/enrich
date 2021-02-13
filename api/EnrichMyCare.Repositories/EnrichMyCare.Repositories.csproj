@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EnrichDatabase\EnrichMyCare.EnrichDatabase.csproj" />
+    <ProjectReference Include="..\EnrichMyCare.DataEntities\EnrichMyCare.DataEntities.csproj" />
+  </ItemGroup>
+
+</Project>
